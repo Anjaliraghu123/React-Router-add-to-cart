@@ -1,17 +1,15 @@
-import React from 'react';
-import { Link,Outlet } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { useCart } from "../CartContext/CartContext";
 
 const Navbar = () => {
-    return (
-        <div>
-            <nav>
-            <Link to="cart">Cart</Link>
-            <Link to="product">Product</Link>
-            </nav>
-           <Outlet />
+  const { cart } = useCart();
 
-        </div>
-    );
-}
+  return (
+    <nav className="flex justify-between p-4 bg-gray-800 text-white">
+      <Link to="/" className="font-bold"> Products </Link>
+      <Link to="/cart">Cart ({cart.length})</Link>
+    </nav>
+  );
+};
 
 export default Navbar;

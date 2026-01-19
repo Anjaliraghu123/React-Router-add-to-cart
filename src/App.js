@@ -7,13 +7,13 @@ import { CartProvider } from "./CartContext/CartContext";
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
+   <BrowserRouter>
+      <Navbar />
+      <Routes>
           <Route path="/" element={<Products />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </BrowserRouter>
+          <Route path="/cart" element={<Cart />} />   
+      </Routes>
+   </BrowserRouter>
     </CartProvider>
   );
 }
